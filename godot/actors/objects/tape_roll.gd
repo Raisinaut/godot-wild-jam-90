@@ -3,13 +3,14 @@ extends Node3D
 const MAX_SPEED = 20
 
 @onready var detection = %Detection
-@onready var roll = $Roll
+@onready var animator = $AnimationPlayer
 
 var follow_target : Node3D
 var velocity := Vector3.ZERO
 var speed : float = 0
 var accel : float = 20
 var pos_tween : Tween = null
+var scale_tween : Tween = null
 
 
 func _ready() -> void:
@@ -31,10 +32,9 @@ func move_toward_target(delta: float) -> void:
 		destroy()
 
 func _on_detection_area_entered(area) -> void:
-	#var pos = global_position
 	top_level = true
-	#global_transform = xform
 	animate_collection()
+	animator.speed_scale = 4.0
 	detection.set_deferred("monitoring", false)
 	follow_target = area
 
@@ -43,10 +43,11 @@ func animate_collection() -> void:
 	var shift_vector := Vector3(0, 1, 0)
 	var end_pos : Vector3 = global_position + shift_vector
 	t.tween_property(self, "global_position", end_pos, 0.25)
+	# shrink
+	scale_tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	scale_tween.tween_property(self, "scale", Vector3.ZERO, 1.0)
 
 func destroy() -> void:
-	var t = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
-	t.tween_property(self, "scale", Vector3.ZERO, 0.2)
 	queue_free()
 
 func is_tweening_pos() -> bool:

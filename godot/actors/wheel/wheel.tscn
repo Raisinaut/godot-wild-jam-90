@@ -19,7 +19,7 @@ _data = [Vector2(0, 0.067251444), 0.0, 3.0490022, 0, 0, Vector2(1, 0), -1.702266
 point_count = 2
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ct6u2"]
-height = 0.4
+height = 0.5
 radius = 0.28
 
 [node name="wheel" unique_id=791062894 instance=ExtResource("1_lap8m")]

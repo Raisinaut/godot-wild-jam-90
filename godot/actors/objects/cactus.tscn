@@ -6,10 +6,11 @@
 [ext_resource type="Material" uid="uid://bo072s1t1qyr0" path="res://assets/materials/cactus_trunk.tres" id="3_ct7du"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qk2ch"]
-radius = 0.2680664
+radius = 0.23
 height = 2.5164423
 
 [node name="cactus" unique_id=1799708484 instance=ExtResource("1_qk2ch")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 script = ExtResource("2_ct7du")
 
 [node name="Cactus_1" parent="." index="0" unique_id=565028883]

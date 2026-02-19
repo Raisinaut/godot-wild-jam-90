@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dvbbcbapus217"]
 
 [ext_resource type="PackedScene" uid="uid://bwrxgb3sguoc3" path="res://actors/wheel/wheel.tscn" id="1_46lwt"]
+[ext_resource type="Script" uid="uid://dix6o7ctbruxi" path="res://levels/level.gd" id="1_e7anx"]
 [ext_resource type="PackedScene" uid="uid://cli5bg0gggnh4" path="res://actors/scrolling_ground/scrolling_ground.tscn" id="1_w7r7j"]
 [ext_resource type="Script" uid="uid://b7q818t6ibqal" path="res://actors/wheel/path_follow.gd" id="1_x25rp"]
+[ext_resource type="Script" uid="uid://c5nwnwwjp3toq" path="res://actors/camera/camera.gd" id="3_ur00s"]
 [ext_resource type="Environment" uid="uid://br4amtkkh6j7k" path="res://levels/environments/test_environment.tres" id="4_e7anx"]
 [ext_resource type="PackedScene" uid="uid://c2hi7wb01r5" path="res://levels/level_spawner.tscn" id="5_o6mel"]
 
@@ -13,17 +15,69 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_ur00s"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_wndkh"]
+resource_name = "intro"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(4, -0.16666667, -0.6666667, 0.1, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(9, -0.16666667, -1.5, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ly3hx"]
+_data = {
+&"RESET": SubResource("Animation_ur00s"),
+&"intro": SubResource("Animation_wndkh")
+}
+
 [node name="World" type="Node3D" unique_id=90692053]
+script = ExtResource("1_e7anx")
 
 [node name="Ground" parent="." unique_id=1108108195 instance=ExtResource("1_w7r7j")]
 transform = Transform3D(1, 0, 0, 0, 0.92050487, 0.39073113, 0, -0.39073113, 0.92050487, 0, 0, 0)
 visible = false
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1961472194]
-transform = Transform3D(-0.65218425, -0.2502327, 0.7155692, 0.014760068, 0.9395767, 0.34202015, -0.75791675, 0.23362201, -0.6090837, 25.534641, 11.690587, -23.387945)
-fov = 9.0
-size = 5.0
-far = 50.0
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1246639351]
 curve = SubResource("Curve3D_46lwt")
@@ -31,6 +85,7 @@ curve = SubResource("Curve3D_46lwt")
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1587284805]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 progress = 4.0
+tilt_enabled = false
 script = ExtResource("1_x25rp")
 
 [node name="Wheel" parent="Path3D/PathFollow3D" unique_id=791062894 instance=ExtResource("1_46lwt")]
@@ -46,3 +101,20 @@ shadow_opacity = 0.82
 
 [node name="LevelSpawner" parent="." unique_id=1699013195 instance=ExtResource("5_o6mel")]
 transform = Transform3D(1, 0, 0, 0, 0.92050487, 0.39073113, 0, -0.39073113, 0.92050487, 0, 0, 0)
+
+[node name="GameCamera" type="Camera3D" parent="." unique_id=1961472194]
+transform = Transform3D(-0.6521843, -0.2502327, 0.7155692, 0.014760069, 0.9395767, 0.34202015, -0.7579168, 0.23362201, -0.6090837, 25.534641, 11.690587, -23.387945)
+fov = 9.0
+size = 5.0
+far = 50.0
+script = ExtResource("3_ur00s")
+
+[node name="CinematicCamera" type="Camera3D" parent="." unique_id=1271622377]
+transform = Transform3D(-0.6521843, -0.2502327, 0.7155692, 0.014760069, 0.9395767, 0.34202015, -0.7579168, 0.23362201, -0.6090837, 25.534641, 12.467227, -22.119032)
+fov = 9.0
+size = 5.0
+far = 50.0
+script = ExtResource("3_ur00s")
+
+[node name="SceneAnimator" type="AnimationPlayer" parent="." unique_id=773113999]
+libraries/ = SubResource("AnimationLibrary_ly3hx")

@@ -5,7 +5,7 @@ signal path_end_reached
 @export var spawn_scene : PackedScene
 @export var spawn_interval : float = 2.5
 
-var followers : Array = []
+var followers : Array[PathFollow3D] = []
 
 var max_interval = 5.0
 var min_interval = 0.5
@@ -15,6 +15,7 @@ var move_duration : float = 7.5
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	add_follower()
 	start_spawn_timer()
 	path_end_reached.connect(_on_path_end_reached)
 

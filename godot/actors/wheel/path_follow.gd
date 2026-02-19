@@ -9,12 +9,12 @@ const max_tilt : float = PI/8
 @export var rotation_offset := Vector3(0, PI/2, 0)
 
 var speed : float = 0.0
-var last_progress : float
-
+var last_progress : float = 0.0
+var allow_input : bool = true
 
 func _ready() -> void:
 	loop = false
-	progress_ratio = 1.0
+	progress_ratio = 0.5
 	last_progress = progress_ratio
 
 func _process(delta: float) -> void:
@@ -26,15 +26,13 @@ func _process(delta: float) -> void:
 # Movement --------------------------------------------------------------------#
 
 func set_speed(delta : float):
-	var input_axis = Input.get_axis("move_left", "move_right")
+	var input_axis = get_input_axis()
 	var target_speed = max_speed * input_axis
 	if target_speed:
 		speed = move_toward(speed, target_speed, accel * delta)
-		#speed = lerp(speed, -target_speed, accel * delta)d
 	else:
 		speed = move_toward(speed, 0.0, decel * delta)
-		#speed = lerp(speed, 0.0, decel * delta)
-	
+	# Slow near each path end
 	if is_approaching_edge():
 		speed = lerp(speed, 0.0, get_damper_weight())
 
@@ -46,6 +44,12 @@ func sync_rotation():
 	var s = get_actual_speed()
 	rotation.y = remap(s, -max_speed, max_speed, -max_tilt, max_tilt)
 	rotation += rotation_offset
+
+func get_input_axis() -> float:
+	if allow_input:
+		return Input.get_axis("move_left", "move_right")
+	else:
+		return 0.0
 
 
 # Checks ----------------------------------------------------------------------#
