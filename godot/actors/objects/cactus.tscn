@@ -1,0 +1,568 @@
+[gd_scene format=3 uid="uid://bxhvclub6l2ji"]
+
+[ext_resource type="PackedScene" uid="uid://b326anjsqu5qe" path="res://assets/models/cactus/cactus.glb" id="1_qk2ch"]
+[ext_resource type="Material" uid="uid://b6p0r4tb6y7kv" path="res://assets/materials/cactus_spine.tres" id="2_bpi1k"]
+[ext_resource type="Script" uid="uid://c7nwhyeqvpifk" path="res://actors/objects/cactus.gd" id="2_ct7du"]
+[ext_resource type="Material" uid="uid://bo072s1t1qyr0" path="res://assets/materials/cactus_trunk.tres" id="3_ct7du"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qk2ch"]
+radius = 0.2680664
+height = 2.5164423
+
+[node name="cactus" unique_id=1799708484 instance=ExtResource("1_qk2ch")]
+script = ExtResource("2_ct7du")
+
+[node name="Cactus_1" parent="." index="0" unique_id=565028883]
+transform = Transform3D(0.005, 0, 0, 0, -2.1855694e-10, -0.005, 0, 0.005, -2.1855694e-10, 0.05, 1.229, 0.007)
+metadata/_edit_group_ = true
+
+[node name="Cone_1_0" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="0" unique_id=484047401]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_1" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="1" unique_id=868175969]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_10" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="2" unique_id=1024004983]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_100" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="3" unique_id=514742509]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_101" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="4" unique_id=636322589]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_102" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="5" unique_id=318150667]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_103" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="6" unique_id=1453343537]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_104" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="7" unique_id=127579294]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_105" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="8" unique_id=639979566]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_106" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="9" unique_id=213294655]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_107" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="10" unique_id=1120451181]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_108" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="11" unique_id=1474437201]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_109" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="12" unique_id=2143068842]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_11" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="13" unique_id=185002647]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_110" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="14" unique_id=453365556]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_111" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="15" unique_id=467603562]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_112" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="16" unique_id=690026684]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_113" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="17" unique_id=1806186252]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_114" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="18" unique_id=1708418799]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_115" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="19" unique_id=1142406741]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_116" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="20" unique_id=134803842]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_117" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="21" unique_id=555583873]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_118" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="22" unique_id=606974833]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_119" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="23" unique_id=234016608]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_12" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="24" unique_id=270874881]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_120" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="25" unique_id=1729864442]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_121" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="26" unique_id=43831776]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_122" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="27" unique_id=1803569470]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_123" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="28" unique_id=791049522]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_124" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="29" unique_id=1109101547]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_125" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="30" unique_id=1684385405]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_126" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="31" unique_id=982202529]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_127" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="32" unique_id=626760930]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_128" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="33" unique_id=2110033885]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_129" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="34" unique_id=1103136160]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_13" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="35" unique_id=723259122]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_130" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="36" unique_id=1228526492]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_131" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="37" unique_id=1160469443]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_132" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="38" unique_id=2084097435]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_133" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="39" unique_id=535956448]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_134" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="40" unique_id=329439904]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_135" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="41" unique_id=963645057]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_136" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="42" unique_id=2132527555]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_137" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="43" unique_id=553747293]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_138" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="44" unique_id=1546941513]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_139" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="45" unique_id=887751795]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_14" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="46" unique_id=722469488]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_140" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="47" unique_id=81615712]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_141" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="48" unique_id=67761389]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_142" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="49" unique_id=908399579]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_143" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="50" unique_id=290473306]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_144" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="51" unique_id=1075260487]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_145" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="52" unique_id=461393609]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_146" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="53" unique_id=844655960]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_147" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="54" unique_id=2051009084]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_148" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="55" unique_id=1568275932]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_149" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="56" unique_id=132718019]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_15" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="57" unique_id=425668372]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_150" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="58" unique_id=1883323223]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_151" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="59" unique_id=1853518738]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_152" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="60" unique_id=562538389]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_153" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="61" unique_id=1841999793]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_154" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="62" unique_id=338244022]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_155" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="63" unique_id=399589257]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_156" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="64" unique_id=625059497]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_157" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="65" unique_id=947532176]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_158" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="66" unique_id=26674364]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_159" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="67" unique_id=762782016]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_16" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="68" unique_id=1518015288]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_160" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="69" unique_id=1934437861]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_161" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="70" unique_id=1617681876]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_162" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="71" unique_id=2134570728]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_163" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="72" unique_id=468855144]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_164" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="73" unique_id=1431047590]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_165" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="74" unique_id=1382686092]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_166" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="75" unique_id=1389285645]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_167" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="76" unique_id=738529643]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_168" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="77" unique_id=1582377208]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_169" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="78" unique_id=24223158]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_17" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="79" unique_id=692903062]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_170" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="80" unique_id=1166729808]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_171" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="81" unique_id=593046588]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_172" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="82" unique_id=1195755207]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_173" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="83" unique_id=1717400410]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_174" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="84" unique_id=67324409]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_175" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="85" unique_id=152076738]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_176" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="86" unique_id=633135862]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_177" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="87" unique_id=713810336]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_178" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="88" unique_id=1183536272]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_179" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="89" unique_id=542353226]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_18" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="90" unique_id=308464282]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_19" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="91" unique_id=412321132]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_2" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="92" unique_id=999075409]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_20" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="93" unique_id=1282817570]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_21" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="94" unique_id=26743154]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_22" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="95" unique_id=1465149310]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_23" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="96" unique_id=679739558]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_24" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="97" unique_id=1639405663]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_25" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="98" unique_id=1977985719]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_26" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="99" unique_id=564536632]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_27" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="100" unique_id=1593991569]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_28" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="101" unique_id=1644758468]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_29" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="102" unique_id=449601988]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_3" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="103" unique_id=1168394731]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_30" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="104" unique_id=1370348629]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_31" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="105" unique_id=260102693]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_32" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="106" unique_id=1784172522]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_33" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="107" unique_id=1638139545]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_34" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="108" unique_id=36141814]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_35" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="109" unique_id=387570402]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_36" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="110" unique_id=1017669815]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_37" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="111" unique_id=1737097965]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_38" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="112" unique_id=2067501732]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_39" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="113" unique_id=1623957219]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_4" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="114" unique_id=416212345]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_40" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="115" unique_id=744575029]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_41" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="116" unique_id=815764700]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_42" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="117" unique_id=1013039654]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_43" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="118" unique_id=1896757482]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_44" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="119" unique_id=1254555976]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_45" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="120" unique_id=1549882797]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_46" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="121" unique_id=1096782574]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_47" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="122" unique_id=348590425]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_48" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="123" unique_id=1046034495]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_49" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="124" unique_id=210339098]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_5" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="125" unique_id=915214394]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_50" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="126" unique_id=1207657959]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_51" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="127" unique_id=350541808]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_52" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="128" unique_id=849802586]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_53" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="129" unique_id=1499241172]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_54" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="130" unique_id=1326394560]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_55" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="131" unique_id=1289217660]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_56" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="132" unique_id=1713390209]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_57" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="133" unique_id=1641294256]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_58" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="134" unique_id=1686678430]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_59" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="135" unique_id=174459358]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_6" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="136" unique_id=9151613]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_60" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="137" unique_id=923966606]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_61" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="138" unique_id=1548365133]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_62" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="139" unique_id=1809085826]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_63" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="140" unique_id=77641983]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_64" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="141" unique_id=307797129]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_65" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="142" unique_id=700891511]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_66" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="143" unique_id=286082570]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_67" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="144" unique_id=706887712]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_68" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="145" unique_id=799489519]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_69" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="146" unique_id=2048936923]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_7" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="147" unique_id=1437240534]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_70" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="148" unique_id=467670153]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_71" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="149" unique_id=1070558445]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_72" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="150" unique_id=14338789]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_73" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="151" unique_id=1709286806]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_74" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="152" unique_id=2035692802]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_75" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="153" unique_id=910328088]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_76" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="154" unique_id=104238568]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_77" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="155" unique_id=1841233715]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_78" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="156" unique_id=1122130033]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_79" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="157" unique_id=218281967]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_8" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="158" unique_id=178083894]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_80" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="159" unique_id=864802954]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_81" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="160" unique_id=601962603]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_82" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="161" unique_id=565031858]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_83" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="162" unique_id=1740871052]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_84" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="163" unique_id=332727169]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_85" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="164" unique_id=780272016]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_86" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="165" unique_id=327892217]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_87" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="166" unique_id=857887364]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_88" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="167" unique_id=200029169]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_89" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="168" unique_id=1176972083]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_9" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="169" unique_id=233365745]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_90" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="170" unique_id=1490561936]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_91" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="171" unique_id=725480748]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_92" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="172" unique_id=2116992817]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_93" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="173" unique_id=998198654]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_94" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="174" unique_id=1057371674]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_95" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="175" unique_id=710562238]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_96" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="176" unique_id=903529878]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_97" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="177" unique_id=290229537]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_98" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="178" unique_id=566862277]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Cone_1_99" parent="Cactus_1/Spines" parent_id_path=PackedInt32Array(1962760179) index="179" unique_id=509810480]
+material_override = ExtResource("2_bpi1k")
+
+[node name="Trunk_2" parent="Cactus_1/Trunk" parent_id_path=PackedInt32Array(870319912) index="0" unique_id=371951038]
+material_override = ExtResource("3_ct7du")
+
+[node name="Detection" type="Area3D" parent="." index="1" unique_id=756097148]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection" index="0" unique_id=1567712439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2554915, 0)
+shape = SubResource("CapsuleShape3D_qk2ch")

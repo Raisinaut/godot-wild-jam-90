@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bw3v30yf37u3y"]
+
+[ext_resource type="Script" uid="uid://bogq7dayq3212" path="res://actors/level_chunk/level_chunk.gd" id="1_j8sub"]
+[ext_resource type="PackedScene" uid="uid://c1nwp3nwqt8pd" path="res://actors/objects/rock.tscn" id="3_3k4wn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7vvu2"]
+size = Vector2(10, 10)
+
+[node name="LevelChunk" type="Node3D" unique_id=340053909]
+script = ExtResource("1_j8sub")
+
+[node name="PlacementArea" type="MeshInstance3D" parent="." unique_id=371080367]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -5)
+mesh = SubResource("QuadMesh_7vvu2")
+metadata/_edit_lock_ = true
+
+[node name="Objects" type="Node3D" parent="." unique_id=181502136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Boundary" type="Node3D" parent="." unique_id=92491746]
+
+[node name="Rock4" parent="Boundary" unique_id=576289936 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -3.7587452)
+
+[node name="Rock5" parent="Boundary" unique_id=891289268 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -2.4982324)
+
+[node name="Rock6" parent="Boundary" unique_id=893736338 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -1.4379201)
+
+[node name="Rock7" parent="Boundary" unique_id=1225178179 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -0.58025837)
+
+[node name="Rock8" parent="Boundary" unique_id=1650739354 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -8.204817)
+
+[node name="Rock9" parent="Boundary" unique_id=1770000584 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -6.944304)
+
+[node name="Rock10" parent="Boundary" unique_id=1954015735 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -5.8839917)
+
+[node name="Rock11" parent="Boundary" unique_id=565886888 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -5.02633)
+
+[node name="Rock12" parent="Boundary" unique_id=13578869 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2815714, 0, -3.7587452)
+
+[node name="Rock13" parent="Boundary" unique_id=1147898393 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2815714, 0, -2.4982324)
+
+[node name="Rock14" parent="Boundary" unique_id=1140205211 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.313905, 0, -1.4379201)
+
+[node name="Rock15" parent="Boundary" unique_id=1088276148 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.313905, 0, -0.58025837)
+
+[node name="Rock16" parent="Boundary" unique_id=1272678161 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2815714, 0, -8.204817)
+
+[node name="Rock20" parent="Boundary" unique_id=1540693802 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2184567, 0, -9.404814)
+
+[node name="Rock21" parent="Boundary" unique_id=418774624 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2815714, 0, -9.404814)
+
+[node name="Rock17" parent="Boundary" unique_id=2023651256 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2815714, 0, -6.944304)
+
+[node name="Rock18" parent="Boundary" unique_id=1968729257 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2815714, 0, -5.8839917)
+
+[node name="Rock19" parent="Boundary" unique_id=468390954 instance=ExtResource("3_3k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2815714, 0, -5.02633)

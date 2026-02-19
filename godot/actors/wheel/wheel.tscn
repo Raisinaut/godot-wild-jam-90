@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bwrxgb3sguoc3"]
+
+[ext_resource type="PackedScene" uid="uid://diyo4e4doyxf5" path="res://assets/models/wheel-default.glb" id="1_lap8m"]
+[ext_resource type="Script" uid="uid://cvleovtx87f6n" path="res://actors/wheel/wheel.gd" id="2_ct6u2"]
+[ext_resource type="Texture2D" uid="uid://b07cr44kw0mo4" path="res://assets/textures/colormap.png" id="2_q4v4p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkyf3"]
+albedo_texture = ExtResource("2_q4v4p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct6u2"]
+shading_mode = 0
+albedo_color = Color(0.9774211, 0.8372074, 0.66885966, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pl1eu"]
+material = SubResource("StandardMaterial3D_ct6u2")
+
+[sub_resource type="Curve" id="Curve_ct6u2"]
+_data = [Vector2(0, 0.067251444), 0.0, 3.0490022, 0, 0, Vector2(1, 0), -1.7022663, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ct6u2"]
+height = 0.4
+radius = 0.28
+
+[node name="wheel" unique_id=791062894 instance=ExtResource("1_lap8m")]
+script = ExtResource("2_ct6u2")
+
+[node name="wheel-default" parent="." index="0" unique_id=749415282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30001396, 0)
+material_override = SubResource("StandardMaterial3D_wkyf3")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="1" unique_id=925242306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108284205, 0.14986318)
+amount = 20
+lifetime = 0.7
+mesh = SubResource("SphereMesh_pl1eu")
+emission_shape = 3
+emission_box_extents = Vector3(0.15, 0, 0)
+direction = Vector3(0, 0.5, 1)
+spread = 20.0
+flatness = 0.5
+gravity = Vector3(0, 10, 20)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+damping_min = 12.0
+damping_max = 15.0
+scale_amount_curve = SubResource("Curve_ct6u2")
+
+[node name="Collision" type="Area3D" parent="." index="2" unique_id=1831499237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30054468, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision" index="0" unique_id=530349676]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_ct6u2")
+debug_color = Color(0.6622484, 0.9310961, 1, 0.41960785)

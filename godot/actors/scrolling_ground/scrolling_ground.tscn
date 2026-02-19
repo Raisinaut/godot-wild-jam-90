@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cli5bg0gggnh4"]
+
+[ext_resource type="Shader" uid="uid://biv6kkxw7m63u" path="res://assets/shaders/scrolling_texture.gdshader" id="1_x0d3g"]
+[ext_resource type="Texture2D" uid="uid://bhns7vni0p7ox" path="res://assets/textures/terrain/normals/sandstone_cracks_nor_gl_4k.jpg" id="2_fmn36"]
+[ext_resource type="Texture2D" uid="uid://cc1fo0t58shb2" path="res://assets/textures/terrain/diffuse/sandstone_cracks_diff_4k.png" id="3_4skrd"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x25rp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7anx"]
+render_priority = 0
+shader = ExtResource("1_x0d3g")
+shader_parameter/scroll_speed = 0.2000000095
+shader_parameter/angle_degrees = 180.00000855
+shader_parameter/repeat_x = 1.0
+shader_parameter/repeat_y = 1.0
+shader_parameter/row_offset = 1.0
+shader_parameter/texture_to_scroll = ExtResource("3_4skrd")
+shader_parameter/texture_normal = ExtResource("2_fmn36")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gmgay"]
+size = Vector2(20, 20)
+center_offset = Vector3(0, -5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ur00s"]
+
+[node name="Ground" type="StaticBody3D" unique_id=1108108195]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1222869243]
+shape = SubResource("WorldBoundaryShape3D_x25rp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=659822690]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_e7anx")
+mesh = SubResource("QuadMesh_gmgay")
+surface_material_override/0 = SubResource("StandardMaterial3D_ur00s")

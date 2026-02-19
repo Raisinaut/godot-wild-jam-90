@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dmbkc3fcs5x6w"]
+
+[ext_resource type="PackedScene" uid="uid://bw3v30yf37u3y" path="res://actors/level_chunk/_level_chunk.tscn" id="1_1r4gl"]
+[ext_resource type="PackedScene" uid="uid://bxhvclub6l2ji" path="res://actors/objects/cactus.tscn" id="2_fyajb"]
+[ext_resource type="PackedScene" uid="uid://b7q2wyjc6vaq8" path="res://actors/objects/tape_roll.tscn" id="3_fyajb"]
+
+[node name="LevelChunk" unique_id=340053909 instance=ExtResource("1_1r4gl")]
+
+[node name="cactus6" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="0" unique_id=1799708484 instance=ExtResource("2_fyajb")]
+transform = Transform3D(0.8930104, 0, -0.45003623, 0, 1, 0, 0.45003623, 0, 0.8930104, -2.5246603, 0, 4.074282)
+
+[node name="cactus7" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="1" unique_id=1495616029 instance=ExtResource("2_fyajb")]
+transform = Transform3D(-0.9808601, 0, -0.19471376, 0, 1, 0, 0.19471376, 0, -0.9808601, 1.681717, 0, 1.4903873)
+
+[node name="cactus8" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="2" unique_id=488879246 instance=ExtResource("2_fyajb")]
+transform = Transform3D(-0.10235861, 0, 0.9947475, 0, 1, 0, -0.9947475, 0, -0.10235861, -1.8752596, 0, 1.0559026)
+
+[node name="cactus9" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="3" unique_id=488457751 instance=ExtResource("2_fyajb")]
+transform = Transform3D(-0.5185047, 0, -0.85507476, 0, 1, 0, 0.85507476, 0, -0.5185047, -0.89221174, 0, -1.7978911)
+
+[node name="cactus10" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="4" unique_id=1126589295 instance=ExtResource("2_fyajb")]
+transform = Transform3D(0.8976818, 0, -0.44064438, 0, 1, 0, 0.44064438, 0, 0.8976818, 3.006837, 0, -2.813614)
+
+[node name="tape_roll" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="5" unique_id=1419304538 instance=ExtResource("3_fyajb")]
+
+[node name="tape_roll2" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="6" unique_id=798880479 instance=ExtResource("3_fyajb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99407196, 0, -2.375204)
+
+[node name="tape_roll3" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="7" unique_id=1250991430 instance=ExtResource("3_fyajb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42134976, 0, 2.2140236)

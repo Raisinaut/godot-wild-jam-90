@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dvbbcbapus217"]
+
+[ext_resource type="PackedScene" uid="uid://bwrxgb3sguoc3" path="res://actors/wheel/wheel.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://cli5bg0gggnh4" path="res://actors/scrolling_ground/scrolling_ground.tscn" id="1_w7r7j"]
+[ext_resource type="Script" uid="uid://b7q818t6ibqal" path="res://actors/wheel/path_follow.gd" id="1_x25rp"]
+[ext_resource type="Environment" uid="uid://br4amtkkh6j7k" path="res://levels/environments/test_environment.tres" id="4_e7anx"]
+[ext_resource type="PackedScene" uid="uid://c2hi7wb01r5" path="res://levels/level_spawner.tscn" id="5_o6mel"]
+
+[sub_resource type="Curve3D" id="Curve3D_46lwt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="World" type="Node3D" unique_id=90692053]
+
+[node name="Ground" parent="." unique_id=1108108195 instance=ExtResource("1_w7r7j")]
+transform = Transform3D(1, 0, 0, 0, 0.92050487, 0.39073113, 0, -0.39073113, 0.92050487, 0, 0, 0)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1961472194]
+transform = Transform3D(-0.65218425, -0.2502327, 0.7155692, 0.014760068, 0.9395767, 0.34202015, -0.75791675, 0.23362201, -0.6090837, 25.534641, 11.690587, -23.387945)
+fov = 9.0
+size = 5.0
+far = 50.0
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1246639351]
+curve = SubResource("Curve3D_46lwt")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1587284805]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+progress = 4.0
+script = ExtResource("1_x25rp")
+
+[node name="Wheel" parent="Path3D/PathFollow3D" unique_id=791062894 instance=ExtResource("1_46lwt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=690027753]
+environment = ExtResource("4_e7anx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=291591557]
+transform = Transform3D(0.69751537, -0.50669134, -0.5066916, -0.36983225, -0.8602078, 0.35109362, -0.61375606, -0.05750227, -0.78739905, 0, 2.9261918, 0)
+shadow_enabled = true
+shadow_opacity = 0.82
+
+[node name="LevelSpawner" parent="." unique_id=1699013195 instance=ExtResource("5_o6mel")]
+transform = Transform3D(1, 0, 0, 0, 0.92050487, 0.39073113, 0, -0.39073113, 0.92050487, 0, 0, 0)

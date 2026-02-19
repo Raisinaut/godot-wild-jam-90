@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c2hi7wb01r5"]
+
+[ext_resource type="Script" uid="uid://cs7vp8cx8yixd" path="res://levels/level_spawner.gd" id="1_we8bc"]
+[ext_resource type="PackedScene" uid="uid://cli5bg0gggnh4" path="res://actors/scrolling_ground/scrolling_ground.tscn" id="2_5vrru"]
+[ext_resource type="Script" uid="uid://unh6w7mpeypy" path="res://levels/level_path.gd" id="2_fwmae"]
+[ext_resource type="PackedScene" uid="uid://dmbkc3fcs5x6w" path="res://actors/level_chunk/variations/chunk_cactus_a.tscn" id="3_fwmae"]
+
+[sub_resource type="Curve3D" id="Curve3D_fwmae"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 15),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="LevelSpawner" type="Node3D" unique_id=1699013195]
+script = ExtResource("1_we8bc")
+
+[node name="LevelPath" type="Path3D" parent="." unique_id=1830741759]
+curve = SubResource("Curve3D_fwmae")
+script = ExtResource("2_fwmae")
+spawn_scene = ExtResource("3_fwmae")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="LevelPath" unique_id=643860957]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -15)
+
+[node name="Ground" parent="." unique_id=1108108195 instance=ExtResource("2_5vrru")]

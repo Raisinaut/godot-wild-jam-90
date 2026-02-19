@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b7q2wyjc6vaq8"]
+
+[ext_resource type="PackedScene" uid="uid://8o3ajfmwac43" path="res://assets/models/tape_roll/tape_roll.glb" id="1_jwef5"]
+[ext_resource type="Script" uid="uid://cbn8ibqdp734t" path="res://actors/objects/tape_roll.gd" id="2_8ulta"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ulta"]
+cull_mode = 2
+albedo_color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+albedo_texture_force_srgb = true
+metallic = 0.21
+roughness = 0.44
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jwef5"]
+radius = 0.3
+
+[sub_resource type="Animation" id="Animation_jwef5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Roll:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.26179942, -7.355475e-16, -1.5707964)]
+}
+
+[sub_resource type="Animation" id="Animation_8ulta"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Roll:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.26179942, -7.355475e-16, -1.5707964), Vector3(-0.2617994, -6.2831855, -1.5707964)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5k3cv"]
+_data = {
+&"RESET": SubResource("Animation_jwef5"),
+&"spin": SubResource("Animation_8ulta")
+}
+
+[node name="TapeRoll" unique_id=1419304538 instance=ExtResource("1_jwef5")]
+script = ExtResource("2_8ulta")
+
+[node name="Roll" parent="." index="0" unique_id=578055382]
+transform = Transform3D(-1.0927846e-08, 0.24999997, -1.7762105e-16, -0.24148142, -1.0555489e-08, 0.06470476, 0.06470476, 2.8283351e-09, 0.24148142, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8ulta")
+
+[node name="Detection" type="Area3D" parent="Roll" index="0" unique_id=574384493]
+unique_name_in_owner = true
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roll/Detection" index="0" unique_id=1012820865]
+shape = SubResource("SphereShape3D_jwef5")
+debug_color = Color(0.35815686, 0.881546, 0.9999998, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1808784388]
+libraries/ = SubResource("AnimationLibrary_5k3cv")
+autoplay = &"spin"
+speed_scale = 0.5
