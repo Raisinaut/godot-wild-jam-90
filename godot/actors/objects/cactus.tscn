@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://b6p0r4tb6y7kv" path="res://assets/materials/cactus_spine.tres" id="2_bpi1k"]
 [ext_resource type="Script" uid="uid://c7nwhyeqvpifk" path="res://actors/objects/cactus.gd" id="2_ct7du"]
 [ext_resource type="Material" uid="uid://bo072s1t1qyr0" path="res://assets/materials/cactus_trunk.tres" id="3_ct7du"]
+[ext_resource type="Script" uid="uid://b2tg1an7n5by8" path="res://components/combat/hitbox_3d.gd" id="5_o6cmx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qk2ch"]
 radius = 0.23
@@ -565,5 +566,15 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Detection" index="0" unique_id=1567712439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2554915, 0)
+shape = SubResource("CapsuleShape3D_qk2ch")
+
+[node name="HitBox3D" type="Area3D" parent="." index="2" unique_id=1254840788]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("5_o6cmx")
+metadata/_custom_type_script = "uid://b2tg1an7n5by8"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox3D" index="0" unique_id=1476856113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2554915, 0)
 shape = SubResource("CapsuleShape3D_qk2ch")

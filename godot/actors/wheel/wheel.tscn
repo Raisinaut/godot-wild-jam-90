@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://diyo4e4doyxf5" path="res://assets/models/wheel-default.glb" id="1_lap8m"]
 [ext_resource type="Script" uid="uid://cvleovtx87f6n" path="res://actors/wheel/wheel.gd" id="2_ct6u2"]
 [ext_resource type="Texture2D" uid="uid://b07cr44kw0mo4" path="res://assets/textures/colormap.png" id="2_q4v4p"]
+[ext_resource type="Script" uid="uid://bq2igwyoco8eg" path="res://components/visibility_flasher.gd" id="4_0xyy1"]
+[ext_resource type="Script" uid="uid://71wsiadbo1el" path="res://components/combat/stats.gd" id="5_purjb"]
+[ext_resource type="Script" uid="uid://ebejjjlriyto" path="res://components/combat/hurtbox_3d.gd" id="6_j71gt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkyf3"]
 albedo_texture = ExtResource("2_q4v4p")
@@ -27,11 +30,11 @@ script = ExtResource("2_ct6u2")
 
 [node name="wheel-default" parent="." index="0" unique_id=749415282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30001396, 0)
-material_override = SubResource("StandardMaterial3D_wkyf3")
+surface_material_override/0 = SubResource("StandardMaterial3D_wkyf3")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." index="1" unique_id=925242306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108284205, 0.14986318)
-amount = 20
+amount = 30
 lifetime = 0.7
 mesh = SubResource("SphereMesh_pl1eu")
 emission_shape = 3
@@ -55,3 +58,24 @@ collision_mask = 0
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_ct6u2")
 debug_color = Color(0.6622484, 0.9310961, 1, 0.41960785)
+
+[node name="HurtBox3D" type="Area3D" parent="." index="3" unique_id=1161230731]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("6_j71gt")
+automatic_invincibility = true
+metadata/_custom_type_script = "uid://ebejjjlriyto"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HurtBox3D" index="0" unique_id=1533859510]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.30054468, 0)
+shape = SubResource("CylinderShape3D_ct6u2")
+debug_color = Color(0.6622484, 0.9310961, 1, 0.41960785)
+
+[node name="VisibilityFlasher" type="Node" parent="." index="4" unique_id=2102489646 node_paths=PackedStringArray("linked_node")]
+script = ExtResource("4_0xyy1")
+flash_interval = 0.04
+linked_node = NodePath("../wheel-default")
+
+[node name="Stats" type="Node" parent="." index="5" unique_id=639317720]
+script = ExtResource("5_purjb")
+metadata/_custom_type_script = "uid://71wsiadbo1el"

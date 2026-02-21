@@ -2,66 +2,65 @@ extends Path3D
 
 signal path_end_reached
 
-@export var spawn_scene : PackedScene
-@export var spawn_interval : float = 2.5
+@export var spawn_scene: PackedScene
 
-var followers : Array[PathFollow3D] = []
-
-var max_interval = 5.0
-var min_interval = 0.5
-
-var move_duration : float = 7.5
+var followers: Array[PathFollow3D] = []
+var move_speed: float = 4.0
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		return
-	add_follower()
-	start_spawn_timer()
-	path_end_reached.connect(_on_path_end_reached)
+	populate_path()
 
-func start_spawn_timer() -> void:
-	get_tree().create_timer(spawn_interval).timeout.connect(_on_spawn_timer_timeout)
+func populate_path() -> void:
+	await add_follower(1.0).ready
+	var last_follower = followers[-1]
+	var chunk_length = LevelChunk.placement_area_length
+	while last_follower.progress >= chunk_length:
+		var gap = last_follower.progress - chunk_length
+		var path_length = curve.get_baked_length()
+		var progress_makeup = gap / path_length
+		await add_follower(progress_makeup).ready
+		last_follower = followers[-1]
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	# Increment follower progressions
 	for i in followers:
-		# increment follower progresion
-		#i.progress += move_speed * delta
-		if i.progress_ratio >= 1.0:
+		i.progress += move_speed * delta
+		if is_equal_approx(i.progress_ratio, 1.0):
 			path_end_reached.emit()
-			followers.erase(i)
+			followers.erase(i) 
 			i.queue_free()
+	# Add a new follower if there is enough space for another chunk
+	if not followers.is_empty():
+		var last_follower = followers[-1]
+		var chunk_length = LevelChunk.placement_area_length
+		if last_follower.progress >= chunk_length:
+			var gap = last_follower.progress - chunk_length
+			var path_length = curve.get_baked_length()
+			var progress_makeup = gap / path_length
+			add_follower(progress_makeup)
 
-func add_follower() -> void:
-	# create new path
+func add_follower(starting_progress : float = 0) -> PathFollow3D:
+	if not spawn_scene:
+		return
 	var follower = PathFollow3D.new()
 	follower.rotation_mode = PathFollow3D.ROTATION_NONE
 	follower.loop = false
 	call_deferred_thread_group("add_child", follower)
-	await follower.ready
-	# attach instance to path
-	var inst = spawn_scene.instantiate()
-	follower.call_deferred("add_child", inst)
-	inst.tree_exited.connect(_on_inst_tree_exited.bind(follower))
-	followers.append(follower)
-	start_follower_movement(follower)
+	follower.ready.connect(_on_follower_ready.bind(follower, starting_progress))
+	return follower
 
-func start_follower_movement(follower : PathFollow3D) -> void:
-	var t = create_tween()
-	t.tween_property(follower, "progress_ratio", 1.0, move_duration)
-
-func get_leading_entity():
-	if get_children().size() > 0:
-		return followers[0].get_child(0)
+func get_follower_child(idx : int) -> Node:
+	if followers.size() > 0:
+		return followers[idx].get_child(0)
 	return null
-
 
 # SIGNALS ----------------------------------------------------------------------
 func _on_inst_tree_exited(follower) -> void:
 	followers.erase(follower)
 
-func _on_path_end_reached() -> void:
-	pass
-
-func _on_spawn_timer_timeout() -> void:
-	add_follower()
-	start_spawn_timer()
+func _on_follower_ready(follower : PathFollow3D, starting_progress : float) -> void:
+	var inst = spawn_scene.instantiate()
+	follower.progress_ratio = starting_progress
+	follower.call_deferred("add_child", inst)
+	inst.tree_exited.connect(_on_inst_tree_exited.bind(follower))
+	followers.append(follower)

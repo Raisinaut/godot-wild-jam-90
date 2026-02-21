@@ -1,6 +1,6 @@
 extends PathFollow3D
 
-const max_tilt : float = PI/8
+const max_tilt : float = PI/7
 
 @export_category("Movement")
 @export var max_speed : float = 8

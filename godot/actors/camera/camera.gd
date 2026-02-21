@@ -18,7 +18,7 @@ func zoom_to(value: float, duration: float = 1.0) -> Tween:
 
 func reset_zoom(duration: float = 1.0) -> Tween:
 	var default_fov_scale = inverse_lerp(MIN_FOV, MAX_FOV, default_fov)
-	return zoom_to(default_fov_scale)
+	return zoom_to(default_fov_scale, duration)
 
 func move_to(pos : Vector3, duration: float = 1.0) -> Tween:
 	pos_tween = create_tween()

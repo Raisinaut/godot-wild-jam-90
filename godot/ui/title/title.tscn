@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bkbsk2jwefbn6"]
+
+[ext_resource type="Gradient" uid="uid://dj2vscvrfvr5h" path="res://ui/title/backdrop_gradient_on.tres" id="1_8lx1x"]
+[ext_resource type="FontFile" uid="uid://cwp476mwo8lyd" path="res://assets/fonts/Fascinate/Fascinate-Regular.ttf" id="1_co4ec"]
+[ext_resource type="Script" uid="uid://cwn5ynrpmeuoq" path="res://ui/title/title.gd" id="1_k1m56"]
+[ext_resource type="FontFile" uid="uid://c07h2dieaiw1b" path="res://assets/fonts/Sarina/Sarina-Regular.ttf" id="2_8abyn"]
+[ext_resource type="Texture2D" uid="uid://dqhvdde43sbg7" path="res://assets/images/title.png" id="3_iiifq"]
+[ext_resource type="Script" uid="uid://dg1qnfxxbgpxg" path="res://ui/title/flash_element.gd" id="5_e5i0f"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8abyn"]
+gradient = ExtResource("1_8lx1x")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.49347827, 0.59347826)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rat7q"]
+font = ExtResource("1_co4ec")
+font_size = 120
+stacked_shadow_count = 2
+stacked_shadow_0/offset = Vector2(-15, 10)
+stacked_shadow_0/color = Color(0.5803922, 0.3764706, 0.12941177, 1)
+stacked_shadow_1/offset = Vector2(-30, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_co4ec"]
+font = ExtResource("2_8abyn")
+font_size = 50
+
+[node name="Title" type="CanvasLayer" unique_id=953638148]
+script = ExtResource("1_k1m56")
+
+[node name="Backdrop" type="TextureRect" parent="." unique_id=816102499]
+unique_name_in_owner = true
+offset_right = 1920.0
+offset_bottom = 1079.9998
+texture = SubResource("GradientTexture2D_8abyn")
+
+[node name="TitleContainer" type="MarginContainer" parent="." unique_id=1726867181]
+unique_name_in_owner = true
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleContainer" unique_id=1772607611]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+
+[node name="TitleImage" type="TextureRect" parent="TitleContainer/VBoxContainer" unique_id=1224172185]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 486)
+layout_mode = 2
+texture = ExtResource("3_iiifq")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TitleText" type="Label" parent="TitleContainer/VBoxContainer" unique_id=1976105122]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "A
+Wheel
+Adventure"
+label_settings = SubResource("LabelSettings_rat7q")
+
+[node name="KeyPrompt" type="Label" parent="TitleContainer/VBoxContainer" unique_id=249148947]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Press Anything To Start"
+label_settings = SubResource("LabelSettings_co4ec")
+script = ExtResource("5_e5i0f")
+min_opacity = 0.5

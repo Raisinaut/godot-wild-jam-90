@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c2hi7wb01r5"]
+
+[ext_resource type="Script" uid="uid://cs7vp8cx8yixd" path="res://levels/chunk_spawner.gd" id="1_we8bc"]
+[ext_resource type="Script" uid="uid://unh6w7mpeypy" path="res://levels/level_path.gd" id="2_fwmae"]
+[ext_resource type="PackedScene" uid="uid://dmbkc3fcs5x6w" path="res://levels/level_chunk/chunks/chunk_cactus_a.tscn" id="3_fwmae"]
+
+[sub_resource type="Curve3D" id="Curve3D_fwmae"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 15),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="ChunkSpawner" type="Node3D" unique_id=1699013195]
+script = ExtResource("1_we8bc")
+
+[node name="Path" type="Path3D" parent="." unique_id=1830741759]
+curve = SubResource("Curve3D_fwmae")
+script = ExtResource("2_fwmae")
+spawn_scene = ExtResource("3_fwmae")
