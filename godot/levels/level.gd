@@ -1,7 +1,6 @@
 extends Node3D
 
 @onready var chunk_spawner = $ChunkSpawner
-@onready var ground = $Ground
 @onready var player_path = $Path3D/PathFollow3D
 @onready var scene_animator = $SceneAnimator
 @onready var title = $Title
@@ -15,11 +14,12 @@ func _ready() -> void:
 	# safety enable cinematic in non-debug builds
 	if OS.is_debug_build():
 		skip_cinematic = false
+	EntityManager.player.died.connect(_on_player_died)
 	title.finished_procession.connect(_on_title_finished_procession)
 	chunk_spawner.mode = ChunkSpawner.Modes.EMPTY
-	start_cinematic()
+	start_intro_cinematic()
 
-func start_cinematic() -> void:
+func start_intro_cinematic() -> void:
 	switch_to_cinematic_camera()
 	scene_animator.play("intro")
 	if skip_cinematic:
@@ -51,8 +51,13 @@ func transition_to_game_camera() -> void:
 	await cinematic_camera.move_to(game_camera.global_position).finished
 	switch_to_game_camera()
 
+func reload():
+	SceneLoader.load_scene(scene_file_path)
 
 # SIGNALS ----------------------------------------------------------------------
 func _on_title_finished_procession() -> void:
 	await transition_to_game_camera()
 	start_level()
+
+func _on_player_died() -> void:
+	reload()

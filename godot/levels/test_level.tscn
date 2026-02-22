@@ -78,9 +78,6 @@ _data = {
 script = ExtResource("1_e7anx")
 skip_cinematic = true
 
-[node name="Ground" parent="." unique_id=1108108195 instance=ExtResource("1_w7r7j")]
-transform = Transform3D(1, 0, 0, 0, 0.92050487, 0.39073113, 0, -0.39073113, 0.92050487, 0, 0, 0)
-
 [node name="FarGround" parent="." unique_id=1690325791 instance=ExtResource("1_w7r7j")]
 transform = Transform3D(9.874882, 0, -1.5769273, 0, 10, 0, 1.5769273, 0, 9.874882, -201.58171, -37.535393, 43.645638)
 speed_scale = 0.05

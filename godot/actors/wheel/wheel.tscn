@@ -78,4 +78,5 @@ linked_node = NodePath("../wheel-default")
 
 [node name="Stats" type="Node" parent="." index="5" unique_id=639317720]
 script = ExtResource("5_purjb")
+max_hp = 1
 metadata/_custom_type_script = "uid://71wsiadbo1el"

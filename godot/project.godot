@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 ScreenshotTool="*uid://kj6n63bix0me"
+EntityManager="*uid://dppxk7a2nx23v"
+SceneLoader="*uid://b7gnblsdsqaxo"
 
 [display]
 

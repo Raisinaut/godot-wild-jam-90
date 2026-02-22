@@ -9,7 +9,6 @@ const placement_area_length: float = 10
 @onready var pickups = $Pickups
 @onready var boundary = $Boundary
 
-#var placement_area_size: = Vector2(10, 10)
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -30,6 +29,7 @@ func make_upright(node: Node3D) -> void:
 
 func randomize_spin(node: Node3D) -> void:
 	node.quaternion.w = randf_range(-1.0, 1.0)
+
 
 # CALCULATIONS -----------------------------------------------------------------
 func get_tilt_vector(amount: float) -> Vector3:

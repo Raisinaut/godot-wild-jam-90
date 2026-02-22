@@ -6,7 +6,7 @@ extends Area3D
 signal detected # not ideal, but signal is triggered from the hurtbox class >_>
 
 @export var damage := 1
-@export var knockback := 10
+@export var knockback := 0
 
 var disabled = false : set = set_disabled
 
