@@ -15,7 +15,7 @@ var speedup_rate : float = 0.02
 
 func _ready() -> void:
 	# safety enable cinematic in non-debug builds
-	if OS.is_debug_build():
+	if not OS.is_debug_build():
 		skip_cinematic = false
 	EntityManager.player.died.connect(_on_player_died)
 	EntityManager.player.death_animation_finished.connect(_on_player_death_finished)

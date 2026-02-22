@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dd0eh4lmu0m5v"]
+
+[ext_resource type="PackedScene" uid="uid://bw3v30yf37u3y" path="res://levels/level_chunk/_level_chunk.tscn" id="1_k8p2q"]
+[ext_resource type="PackedScene" uid="uid://bxhvclub6l2ji" path="res://actors/objects/cactus.tscn" id="2_yxv6r"]
+
+[node name="LevelChunk" unique_id=340053909 instance=ExtResource("1_k8p2q")]
+
+[node name="cactus6" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="0" unique_id=1799708484 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(0.7144083, 0, -0.36002898, 0, 0.8, 0, 0.36002898, 0, 0.7144083, -3.7667928, 0, 4.683065)
+
+[node name="cactus11" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="1" unique_id=847674352 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(0.7144083, 0, -0.36002898, 0, 0.8, 0, 0.36002898, 0, 0.7144083, -3.2638066, 0, 3.3940725)
+
+[node name="cactus12" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="2" unique_id=1200825806 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(0.7144083, 0, -0.36002898, 0, 0.8, 0, 0.36002898, 0, 0.7144083, -2.6539605, 0, 2.0453725)
+
+[node name="cactus7" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="3" unique_id=1495616029 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(-0.7846881, 0, -0.15577106, 0, 0.8, 0, 0.15577106, 0, -0.7846881, 1.681717, 0, 1.4903873)
+
+[node name="cactus14" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="4" unique_id=1053768747 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(-0.7846881, 0, -0.15577106, 0, 0.8, 0, 0.15577106, 0, -0.7846881, 0.66147053, 0, 3.8999078)
+
+[node name="cactus8" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="5" unique_id=488879246 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(-0.08188685, 0, 0.79579806, 0, 0.8, 0, -0.79579806, 0, -0.08188685, -1.8752596, 0, 0.9034405)
+
+[node name="cactus13" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="6" unique_id=2008006380 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(-0.08188685, 0, 0.79579806, 0, 0.8, 0, -0.79579806, 0, -0.08188685, -1.2741549, 0, -0.43353176)
+
+[node name="cactus9" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="7" unique_id=488457751 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(-0.4148038, 0, -0.6840598, 0, 0.8, 0, 0.6840598, 0, -0.4148038, -0.89221174, 0, -1.7978911)
+
+[node name="cactus15" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="8" unique_id=1510277981 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(-0.4148038, 0, -0.6840598, 0, 0.8, 0, 0.6840598, 0, -0.4148038, -0.89221174, 0, -3.2739935)
+
+[node name="cactus16" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="9" unique_id=162635269 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(-0.4148038, 0, -0.6840598, 0, 0.8, 0, 0.6840598, 0, -0.4148038, -1.5000188, 0, -4.576437)
+
+[node name="cactus10" parent="Objects" parent_id_path=PackedInt32Array(181502136) index="10" unique_id=1126589295 instance=ExtResource("2_yxv6r")]
+transform = Transform3D(0.71814543, 0, -0.35251552, 0, 0.8, 0, 0.35251552, 0, 0.71814543, 3.006837, 0, -4.8128033)
