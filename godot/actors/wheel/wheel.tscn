@@ -4,39 +4,164 @@
 [ext_resource type="Script" uid="uid://cvleovtx87f6n" path="res://actors/wheel/wheel.gd" id="2_ct6u2"]
 [ext_resource type="Texture2D" uid="uid://b07cr44kw0mo4" path="res://assets/textures/colormap.png" id="2_q4v4p"]
 [ext_resource type="Script" uid="uid://bq2igwyoco8eg" path="res://components/visibility_flasher.gd" id="4_0xyy1"]
+[ext_resource type="SphereMesh" uid="uid://cxvncpsja6mcg" path="res://actors/wheel/dust_mesh.tres" id="4_ihhwj"]
 [ext_resource type="Script" uid="uid://71wsiadbo1el" path="res://components/combat/stats.gd" id="5_purjb"]
 [ext_resource type="Script" uid="uid://ebejjjlriyto" path="res://components/combat/hurtbox_3d.gd" id="6_j71gt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkyf3"]
 albedo_texture = ExtResource("2_q4v4p")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct6u2"]
-shading_mode = 0
-albedo_color = Color(0.9774211, 0.8372074, 0.66885966, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_pl1eu"]
-material = SubResource("StandardMaterial3D_ct6u2")
-
 [sub_resource type="Curve" id="Curve_ct6u2"]
 _data = [Vector2(0, 0.067251444), 0.0, 3.0490022, 0, 0, Vector2(1, 0), -1.7022663, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ftktf"]
+_data = [Vector2(0, 0), 0.0, 2.6383696, 0, 0, Vector2(1, 0), -0.823068, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ct6u2"]
 height = 0.5
 radius = 0.28
 
+[sub_resource type="Animation" id="Animation_j71gt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wheel-default:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.30001396, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DustTrail:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wheel-default:rotation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wheel-default:rotation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DustCloud:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ihhwj"]
+resource_name = "death"
+length = 1.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wheel-default:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.30001396, 0, 0, 0, 0, 1.2, -0.25, 0, 0.25, 0, 0.30001396, 0, 0, 0, 0, 0.6, -0.1, 0, 0.1, 0, 0.30001396, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1, 1.2)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DustTrail:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8000001, 0.8333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wheel-default:rotation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 10, -0.4, 0, 0, 0, 11, -0.16666675, -0.26074123, 0, 0),
+"times": PackedFloat32Array(0, 0.8, 1.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wheel-default:rotation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 10, -0.4, 0, 0, 0, 14.5, -0.2, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.8, 1.2)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DustCloud:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftktf"]
+_data = {
+&"RESET": SubResource("Animation_j71gt"),
+&"death": SubResource("Animation_ihhwj")
+}
+
 [node name="wheel" unique_id=791062894 instance=ExtResource("1_lap8m")]
 script = ExtResource("2_ct6u2")
 
 [node name="wheel-default" parent="." index="0" unique_id=749415282]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30001396, 0)
+transform = Transform3D(1, 0, 0, 0, 1, -4.3965933e-09, 0, 4.3965933e-09, 1, 0, 0.30001396, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_wkyf3")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="1" unique_id=925242306]
+[node name="DustTrail" type="CPUParticles3D" parent="." index="1" unique_id=925242306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108284205, 0.14986318)
 amount = 30
 lifetime = 0.7
-mesh = SubResource("SphereMesh_pl1eu")
+mesh = ExtResource("4_ihhwj")
 emission_shape = 3
 emission_box_extents = Vector3(0.15, 0, 0)
 direction = Vector3(0, 0.5, 1)
@@ -49,7 +174,25 @@ damping_min = 12.0
 damping_max = 15.0
 scale_amount_curve = SubResource("Curve_ct6u2")
 
-[node name="Collision" type="Area3D" parent="." index="2" unique_id=1831499237]
+[node name="DustCloud" type="CPUParticles3D" parent="." index="2" unique_id=1063418706]
+emitting = false
+amount = 50
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.77
+mesh = ExtResource("4_ihhwj")
+direction = Vector3(0, 0.2, 1)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 10, 2)
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+damping_min = 10.0
+damping_max = 10.0
+scale_amount_curve = SubResource("Curve_ftktf")
+
+[node name="Collision" type="Area3D" parent="." index="3" unique_id=1831499237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30054468, 0)
 collision_layer = 4
 collision_mask = 0
@@ -59,7 +202,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 shape = SubResource("CylinderShape3D_ct6u2")
 debug_color = Color(0.6622484, 0.9310961, 1, 0.41960785)
 
-[node name="HurtBox3D" type="Area3D" parent="." index="3" unique_id=1161230731]
+[node name="HurtBox3D" type="Area3D" parent="." index="4" unique_id=1161230731]
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("6_j71gt")
@@ -71,12 +214,15 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 shape = SubResource("CylinderShape3D_ct6u2")
 debug_color = Color(0.6622484, 0.9310961, 1, 0.41960785)
 
-[node name="VisibilityFlasher" type="Node" parent="." index="4" unique_id=2102489646 node_paths=PackedStringArray("linked_node")]
+[node name="VisibilityFlasher" type="Node" parent="." index="5" unique_id=2102489646 node_paths=PackedStringArray("linked_node")]
 script = ExtResource("4_0xyy1")
 flash_interval = 0.04
 linked_node = NodePath("../wheel-default")
 
-[node name="Stats" type="Node" parent="." index="5" unique_id=639317720]
+[node name="Stats" type="Node" parent="." index="6" unique_id=639317720]
 script = ExtResource("5_purjb")
-max_hp = 1
+max_hp = 3
 metadata/_custom_type_script = "uid://71wsiadbo1el"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7" unique_id=654508158]
+libraries/ = SubResource("AnimationLibrary_ftktf")

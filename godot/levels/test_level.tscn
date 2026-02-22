@@ -8,6 +8,7 @@
 [ext_resource type="Environment" uid="uid://br4amtkkh6j7k" path="res://levels/environments/test_environment.tres" id="4_e7anx"]
 [ext_resource type="PackedScene" uid="uid://c2hi7wb01r5" path="res://levels/chunk_spawner.tscn" id="5_o6mel"]
 [ext_resource type="PackedScene" uid="uid://bkbsk2jwefbn6" path="res://ui/title/title.tscn" id="8_wndkh"]
+[ext_resource type="PackedScene" uid="uid://ftduhakxpisy" path="res://ui/hud/hud.tscn" id="9_ly3hx"]
 
 [sub_resource type="Curve3D" id="Curve3D_46lwt"]
 _data = {
@@ -123,3 +124,5 @@ libraries/ = SubResource("AnimationLibrary_ly3hx")
 
 [node name="Title" parent="." unique_id=953638148 instance=ExtResource("8_wndkh")]
 follow_viewport_enabled = true
+
+[node name="HUD" parent="." unique_id=1089869161 instance=ExtResource("9_ly3hx")]
