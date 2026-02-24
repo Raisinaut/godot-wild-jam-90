@@ -1,11 +1,11 @@
-extends MarginContainer
+extends HBoxContainer
 
 signal confirmed
 signal canceled
 signal close_requested
 
-@onready var cancel = $HBoxContainer/cancel
-@onready var confirm = $HBoxContainer/confirm
+@onready var cancel = $Cancel
+@onready var confirm = $Confirm
 
 
 func _ready() -> void:
