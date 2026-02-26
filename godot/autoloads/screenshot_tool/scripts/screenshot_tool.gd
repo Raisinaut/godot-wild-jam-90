@@ -15,7 +15,7 @@ var shot_buffer : Array[Image] = []
 var selected_shot : Image = null :
 	set(image):
 		selected_shot = image
-		update_preview_texture()
+		update_preview_image()
 
 
 func _init() -> void:
@@ -28,6 +28,7 @@ func _ready() -> void:
 	preview_interface.screenshot_confirmed.connect(open_dialog)
 	preview_interface.screenshot_canceled.connect(close_dialog)
 	preview_interface.timeline_percent_changed.connect(_on_timeline_changed)
+	preview_interface.timeline_thumbnail_value_changed.connect(_on_timeline_thumbnail_value_changed)
 	save_dialog_line_edit.text_submitted.connect(_on_line_edit_text_submitted)
 
 func _process(_delta: float) -> void:
@@ -58,21 +59,27 @@ func add_screenshot_action():
 
 
 # PREVIEW ----------------------------------------------------------------------
-func update_preview_texture() -> void:
-	preview_interface.set_preview_texture(get_selected_shot(true))
+func update_preview_image() -> void:
+	preview_interface.set_preview_image(get_selected_shot())
 
 func _on_timeline_changed(new_percentage : float) -> void:
 	# Sync selected shot with timeline position
 	var buffer_idx = lerp(0, shot_buffer.size() - 1, new_percentage)
 	selected_shot = shot_buffer[round(buffer_idx)]
 
+func _on_timeline_thumbnail_value_changed(value : float) -> void:
+	# retrieve the image at this value
+	var buffer_idx = lerp(0, shot_buffer.size() - 1, value)
+	var image : Image = shot_buffer[round(buffer_idx)]
+	# applly it to the thumbnail
+	preview_interface.timeline.set_thumbnail_image(image)
 
 # SCREENSHOT MANAGEMENT --------------------------------------------------------
 func save_screenshot(directory : String, filename):
 	if not OS.is_debug_build() : return
 	
 	await RenderingServer.frame_post_draw
-	var image = get_selected_shot(false)
+	var image = get_selected_shot()
 	var error = image.save_png(directory + "/" + filename)
 	
 	if error == OK:
@@ -85,14 +92,10 @@ func get_viewport_image() -> Image:
 	await RenderingServer.frame_post_draw
 	return get_viewport().get_texture().get_image()
 
-func get_selected_shot(as_texture : bool) -> Resource:
+func get_selected_shot() -> Resource:
 	if !selected_shot:
 		return null
-	
-	if as_texture:
-		return ImageTexture.create_from_image(selected_shot)
-	else:
-		return selected_shot
+	return selected_shot
 
 ## Preserves shots up to the buffer size
 func update_shot_buffer() -> void:
